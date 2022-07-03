@@ -98,12 +98,17 @@
 		5A8AFC5928725EBA00A863C8 /* Text Mee */ = {
 			isa = PBXGroup;
 			children = (
-				5A8AFC5A28725EBA00A863C8 /* Text_MeeApp.swift */,
-				5A8AFC5C28725EBA00A863C8 /* ContentView.swift */,
+				5A8AFC8D28725FF000A863C8 /* Resources */,
+				5A8AFC8C28725FE000A863C8 /* ViewModels */,
+				5A8AFC8B28725FD000A863C8 /* Models */,
+				5A8AFC8A28725FC800A863C8 /* Views */,
 				5A8AFC5E28725EBC00A863C8 /* Assets.xcassets */,
+				5A8AFC5C28725EBA00A863C8 /* ContentView.swift */,
+				5A8AFC8928725FB700A863C8 /* Controllers */,
 				5A8AFC6328725EBC00A863C8 /* Persistence.swift */,
-				5A8AFC6528725EBC00A863C8 /* Text_Mee.xcdatamodeld */,
 				5A8AFC6028725EBC00A863C8 /* Preview Content */,
+				5A8AFC6528725EBC00A863C8 /* Text_Mee.xcdatamodeld */,
+				5A8AFC5A28725EBA00A863C8 /* Text_MeeApp.swift */,
 			);
 			path = "Text Mee";
 			sourceTree = "<group>";
@@ -131,6 +136,41 @@
 				5A8AFC7C28725EBC00A863C8 /* Text_MeeUITestsLaunchTests.swift */,
 			);
 			path = "Text MeeUITests";
+			sourceTree = "<group>";
+		};
+		5A8AFC8928725FB700A863C8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5A8AFC8A28725FC800A863C8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5A8AFC8B28725FD000A863C8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5A8AFC8C28725FE000A863C8 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5A8AFC8D28725FF000A863C8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
