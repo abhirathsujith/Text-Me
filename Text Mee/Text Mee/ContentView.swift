@@ -19,6 +19,16 @@ struct ContentView: View {
         NavigationView {
             List {
                 ForEach(viewModel.getSortedFilteredChats(query: query)) { chat in
+                    
+                    
+                    NavigationLink(destination: {
+                        Text(chat.person.name)
+                    }){
+                        ChatRow(chat: chat)
+                        
+                    }
+                    
+                    
                     ChatRow(chat: chat)
                 }
             }
