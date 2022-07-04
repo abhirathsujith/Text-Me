@@ -20,16 +20,22 @@ struct ContentView: View {
             List {
                 ForEach(viewModel.getSortedFilteredChats(query: query)) { chat in
                     
-                    
-                    NavigationLink(destination: {
-                        Text(chat.person.name)
-                    }){
+                    ZStack{
+                        
                         ChatRow(chat: chat)
                         
+                        NavigationLink(destination: {
+                            Text(chat.person.name)
+                        }){
+                            EmptyView()
+                            
+                            
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                        .frame(width: 0)
+                        .opacity(0)
                     }
                     
-                    
-                    ChatRow(chat: chat)
                 }
             }
             .listStyle(PlainListStyle())
