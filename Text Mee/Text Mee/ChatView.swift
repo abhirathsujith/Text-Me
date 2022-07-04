@@ -13,14 +13,22 @@ struct ChatView: View {
     
     let chat: Chat
     
+    @State private var text = ""
+    @FocusState private var isFocused
+    
     var body: some View {
         VStack(spacing: 0){
             GeometryReader { reader in
                 ScrollView {
                     getMessagesView(viewWidth: reader.size.width)
+                        .padding(.horizontal)
                 }
             }
             .background(Color.cyan)
+            
+            
+            
+            toolbarView()
         }
         .padding(.top, 1)
         .navigationBarTitleDisplayMode(.inline)
@@ -28,6 +36,24 @@ struct ChatView: View {
             viewModel.markAsUnread(false, chat: chat)
         }
         
+    }
+    
+    func toolbarView() -> some View {
+        VStack {
+            let height: CGFloat = 35
+            HStack {
+                TextField("Message......", text: $text)
+                    .padding(.horizontal, 10)
+                    .frame(height: height)
+                    .background(Color.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .focused($isFocused)
+            }
+           
+        }
+        .padding(.vertical)
+        .padding(.horizontal)
+        .background(.thinMaterial)
     }
     
     let columns = [GridItem(.flexible(minimum: 10))]
@@ -41,14 +67,16 @@ struct ChatView: View {
                         Text(message.text)
                             .padding(.horizontal)
                             .padding(.vertical, 12)
-                            .background(isRecevied ? Color.black.opacity(0.3) : .green.opacity(0.8))
+                            .background(isRecevied ? Color.yellow.opacity(1) : .orange.opacity(1))
+                            .cornerRadius(15)
                     }
                     .frame(width: viewWidth * 0.7, alignment: isRecevied ? .leading : .trailing)
                     .padding(.vertical)
-                    .background(Color.orange)
+                    //.background(Color.orange)
                    
                 }
                 .frame(maxWidth: .infinity, alignment: isRecevied ? .leading : .trailing)
+                .id(message.id)
             }
         }
     }
