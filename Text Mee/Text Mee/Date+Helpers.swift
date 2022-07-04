@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+extension Date {
+    func descriptiveString(dateStyle: DateFormatter.Style = .short) -> String{
+        return "Today"
+    }
+}
