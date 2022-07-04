@@ -36,7 +36,19 @@ struct ContentView: View {
                         .frame(width: 0)
                         .opacity(0)
                     }
-                    
+                    .swipeActions(edge: .leading, allowsFullSwipe: true){
+                        Button(action: {
+                            viewModel.markAsUnread(true, chat: chat)
+                        }) {
+                            if chat.hasUnreadMessage {
+                                Label("Read", systemImage: "text.bubble")
+                                
+                            } else {
+                                Label("Unread", systemImage: "circle.fill")
+                            }
+                        }
+                        .tint(.orange)
+                    }
                 }
             }
             .listStyle(PlainListStyle())
