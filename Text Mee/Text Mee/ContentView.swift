@@ -20,6 +20,10 @@ struct ContentView: View {
                 }
             }
             .listStyle(PlainListStyle())
+            .navigationTitle("MyChats")
+            .navigationBarItems(trailing: Button(action: { }){
+                   Image(systemName: "Car")
+            })
       }
 
    }
