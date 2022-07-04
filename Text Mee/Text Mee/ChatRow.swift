@@ -31,7 +31,7 @@ struct ChatRow: View {
                     
                     HStack{
                         Text(chat.messages.last?.text ?? "")
-                            .foregroundColor(.gray .opacity(2))
+                            .foregroundColor(.orange.opacity(2))
                             .lineLimit(2)
                             .frame(height: 50, alignment: .top)
                             .frame(maxWidth: .infinity, alignment: .leading)
