@@ -38,7 +38,7 @@ struct ContentView: View {
                     }
                     .swipeActions(edge: .leading, allowsFullSwipe: true){
                         Button(action: {
-                            viewModel.markAsUnread(true, chat: chat)
+                            viewModel.markAsUnread(!chat.hasUnreadMessage, chat: chat)
                         }) {
                             if chat.hasUnreadMessage {
                                 Label("Read", systemImage: "text.bubble")

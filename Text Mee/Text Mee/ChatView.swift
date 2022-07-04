@@ -15,7 +15,12 @@ struct ChatView: View {
     
     var body: some View {
         VStack(spacing: 0){
-            Text("Heyyyyy")
+            GeometryReader { reader in
+                ScrollView {
+                    getMessagesView(viewWidth: reader.size.width)
+                }
+            }
+            .background(Color.cyan)
         }
         .padding(.top, 1)
         .navigationBarTitleDisplayMode(.inline)
@@ -24,6 +29,30 @@ struct ChatView: View {
         }
         
     }
+    
+    let columns = [GridItem(.flexible(minimum: 10))]
+    
+    func getMessagesView(viewWidth: CGFloat) -> some View {
+        LazyVGrid(columns: columns, spacing: 0){
+            ForEach(chat.messages) { message in
+                let isRecevied = message.type == .Received
+                HStack {
+                    ZStack{
+                        Text(message.text)
+                            .padding(.horizontal)
+                            .padding(.vertical, 12)
+                            .background(isRecevied ? Color.black.opacity(0.3) : .green.opacity(0.8))
+                    }
+                    .frame(width: viewWidth * 0.7, alignment: isRecevied ? .leading : .trailing)
+                    .padding(.vertical)
+                    .background(Color.orange)
+                   
+                }
+                .frame(maxWidth: .infinity, alignment: isRecevied ? .leading : .trailing)
+            }
+        }
+    }
+
 }
 
 struct ChatView_Previews: PreviewProvider {
