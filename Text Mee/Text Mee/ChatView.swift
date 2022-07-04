@@ -16,6 +16,8 @@ struct ChatView: View {
     @State private var text = ""
     @FocusState private var isFocused
     
+    @State private var messageIDToScroll: UUID?
+    
     var body: some View {
         VStack(spacing: 0){
             GeometryReader { reader in
@@ -42,18 +44,37 @@ struct ChatView: View {
         VStack {
             let height: CGFloat = 35
             HStack {
-                TextField("Message......", text: $text)
+                TextField("Message Here.....", text: $text)
                     .padding(.horizontal, 10)
                     .frame(height: height)
                     .background(Color.white)
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                     .focused($isFocused)
+                
+                Button(action: sendMessage) {
+                    Image(systemName: "paperplane.fill")
+                        .foregroundColor(text.isEmpty ? .indigo : .cyan)
+                        .frame(width: height, height: height)
+                        .background(
+                        Circle()
+                            .foregroundColor(text.isEmpty ? .orange : .yellow)
+                        )
+                   }
+                   .disabled(text.isEmpty)
             }
-           
+            .frame(height: height)
         }
         .padding(.vertical)
         .padding(.horizontal)
         .background(.thinMaterial)
+    }
+    
+    
+    func sendMessage(){
+        if let message = viewModel.sendMessage(text, in: chat){
+            text = ""
+        }
+        
     }
     
     let columns = [GridItem(.flexible(minimum: 10))]
