@@ -25,7 +25,8 @@ struct ContentView: View {
                         ChatRow(chat: chat)
                         
                         NavigationLink(destination: {
-                            Text(chat.person.name)
+                            ChatView(chat: chat)
+                                .environmentObject(viewModel)
                         }){
                             EmptyView()
                             
