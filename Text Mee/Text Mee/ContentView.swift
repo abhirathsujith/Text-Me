@@ -10,18 +10,20 @@ import SwiftUI
 
 struct ContentView: View {
     
-    let chats = Chat.sampleChat
+    @StateObject var viewModel = ChatsViewModel()
+    
+    @State private var query = ""
     
 
     var body: some View {
-      // Text("Text Mee").padding()
         NavigationView {
             List {
-                ForEach(chats) { chat in
+                ForEach(viewModel.getSortedFilteredChats(query: query)) { chat in
                     ChatRow(chat: chat)
                 }
             }
             .listStyle(PlainListStyle())
+            .searchable(text: $query)
             .navigationTitle("MyChats")
             .navigationBarItems(trailing: Button(action: { }){
                    Image(systemName: "Car")
