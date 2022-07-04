@@ -22,8 +22,24 @@ struct ChatView: View {
         VStack(spacing: 0){
             GeometryReader { reader in
                 ScrollView {
-                    getMessagesView(viewWidth: reader.size.width)
-                        .padding(.horizontal)
+                    ScrollViewReader { scrollReader in
+                        getMessagesView(viewWidth: reader.size.width)
+                            .padding(.horizontal)
+                            .onChange(of: messageIDToScroll) { _ in
+                                if let messageID = messageIDToScroll {
+                                    scrollTo(messageID: messageID, shouldAnimate: true, scrollReader: scrollReader)
+                                    
+                                }
+                                
+                            }
+                            .onAppear {
+                                if let messageID = chat.messages.last?.id {
+                                    scrollTo(messageID: messageID, anchor: .bottom, shouldAnimate: false, scrollReader: scrollReader)
+                                }
+                            }
+                        
+                    }
+                    
                 }
             }
             .background(Color.cyan)
@@ -40,6 +56,14 @@ struct ChatView: View {
         
     }
     
+    func scrollTo(messageID: UUID, anchor: UnitPoint? = nil, shouldAnimate: Bool, scrollReader: ScrollViewProxy) {
+        DispatchQueue.main.async {
+            withAnimation(shouldAnimate ? Animation.easeIn : nil) {
+                scrollReader.scrollTo(messageID, anchor: anchor)
+            }
+        }
+    }
+    
     func toolbarView() -> some View {
         VStack {
             let height: CGFloat = 35
@@ -48,7 +72,7 @@ struct ChatView: View {
                     .padding(.horizontal, 10)
                     .frame(height: height)
                     .background(Color.white)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .clipShape(RoundedRectangle(cornerRadius: 15))
                     .focused($isFocused)
                 
                 Button(action: sendMessage) {
@@ -70,9 +94,10 @@ struct ChatView: View {
     }
     
     
-    func sendMessage(){
+    func sendMessage() {
         if let message = viewModel.sendMessage(text, in: chat){
             text = ""
+            messageIDToScroll = message.id
         }
         
     }
