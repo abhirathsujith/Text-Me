@@ -17,6 +17,7 @@
 		5A8AFC7B28725EBC00A863C8 /* Text_MeeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AFC7A28725EBC00A863C8 /* Text_MeeUITests.swift */; };
 		5A8AFC7D28725EBC00A863C8 /* Text_MeeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AFC7C28725EBC00A863C8 /* Text_MeeUITestsLaunchTests.swift */; };
 		5A8AFCB828726D9300A863C8 /* ChatRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AFCB728726D9300A863C8 /* ChatRow.swift */; };
+		5A8AFCBA287361C000A863C8 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AFCB9287361BF00A863C8 /* ChatModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		5A8AFC7A28725EBC00A863C8 /* Text_MeeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text_MeeUITests.swift; sourceTree = "<group>"; };
 		5A8AFC7C28725EBC00A863C8 /* Text_MeeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text_MeeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5A8AFCB728726D9300A863C8 /* ChatRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRow.swift; sourceTree = "<group>"; };
+		5A8AFCB9287361BF00A863C8 /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				5A8AFC8A28725FC800A863C8 /* Views */,
 				5A8AFC5E28725EBC00A863C8 /* Assets.xcassets */,
 				5A8AFC5C28725EBA00A863C8 /* ContentView.swift */,
+				5A8AFCB9287361BF00A863C8 /* ChatModel.swift */,
 				5A8AFCB728726D9300A863C8 /* ChatRow.swift */,
 				5A8AFC8928725FB700A863C8 /* Controllers */,
 				5A8AFC6328725EBC00A863C8 /* Persistence.swift */,
@@ -311,6 +314,7 @@
 				5A8AFC5D28725EBA00A863C8 /* ContentView.swift in Sources */,
 				5A8AFCB828726D9300A863C8 /* ChatRow.swift in Sources */,
 				5A8AFC5B28725EBA00A863C8 /* Text_MeeApp.swift in Sources */,
+				5A8AFCBA287361C000A863C8 /* ChatModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
