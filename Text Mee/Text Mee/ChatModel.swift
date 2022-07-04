@@ -47,8 +47,8 @@ extension Chat {
     
     
     static let sampleChat = [
-        Chat(person: Person(name: "Hakim", imgString: "img1"), messages: [
-            Message ("Hey Hakim", type: .Sent, date: Date(timeIntervalSinceNow: -86400 * 3)),
+        Chat(person: Person(name: "ABB", imgString: "1"), messages: [
+            Message ("Hey AB", type: .Sent, date: Date(timeIntervalSinceNow: -86400 * 3)),
             Message ("I am just developing an WhatsApp Clone App and it is so hard to create a fake chat conversation. Can you help me out with it?", type: .Sent, date: Date(timeIntervalSinceNow:
             -86400 * 3)),
             Message ("Please I need your help @", type: .Sent, date: Date(timeIntervalSinceNow: -86400 * 3)),
