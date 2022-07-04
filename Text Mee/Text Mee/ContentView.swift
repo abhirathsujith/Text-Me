@@ -12,11 +12,11 @@ struct ContentView: View {
     
 
     var body: some View {
-       Text("Text Mee").padding()
+      // Text("Text Mee").padding()
         NavigationView {
             List {
                 ForEach(0..<10) { i in
-                    Text(String(i))
+                    ChatRow()
                 }
             }
             .listStyle(PlainListStyle())

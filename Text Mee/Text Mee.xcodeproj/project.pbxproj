@@ -16,6 +16,7 @@
 		5A8AFC7128725EBC00A863C8 /* Text_MeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AFC7028725EBC00A863C8 /* Text_MeeTests.swift */; };
 		5A8AFC7B28725EBC00A863C8 /* Text_MeeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AFC7A28725EBC00A863C8 /* Text_MeeUITests.swift */; };
 		5A8AFC7D28725EBC00A863C8 /* Text_MeeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AFC7C28725EBC00A863C8 /* Text_MeeUITestsLaunchTests.swift */; };
+		5A8AFCB828726D9300A863C8 /* ChatRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AFCB728726D9300A863C8 /* ChatRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		5A8AFC7628725EBC00A863C8 /* Text MeeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Text MeeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A8AFC7A28725EBC00A863C8 /* Text_MeeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text_MeeUITests.swift; sourceTree = "<group>"; };
 		5A8AFC7C28725EBC00A863C8 /* Text_MeeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text_MeeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5A8AFCB728726D9300A863C8 /* ChatRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				5A8AFC8A28725FC800A863C8 /* Views */,
 				5A8AFC5E28725EBC00A863C8 /* Assets.xcassets */,
 				5A8AFC5C28725EBA00A863C8 /* ContentView.swift */,
+				5A8AFCB728726D9300A863C8 /* ChatRow.swift */,
 				5A8AFC8928725FB700A863C8 /* Controllers */,
 				5A8AFC6328725EBC00A863C8 /* Persistence.swift */,
 				5A8AFC6028725EBC00A863C8 /* Preview Content */,
@@ -306,6 +309,7 @@
 				5A8AFC6728725EBC00A863C8 /* Text_Mee.xcdatamodeld in Sources */,
 				5A8AFC6428725EBC00A863C8 /* Persistence.swift in Sources */,
 				5A8AFC5D28725EBA00A863C8 /* ContentView.swift in Sources */,
+				5A8AFCB828726D9300A863C8 /* ChatRow.swift in Sources */,
 				5A8AFC5B28725EBA00A863C8 /* Text_MeeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
