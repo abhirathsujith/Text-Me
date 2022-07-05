@@ -42,7 +42,8 @@ struct ChatView: View {
                     
                 }
             }
-            .background(Color.cyan)
+           // .background(Color.cyan)
+            .padding(.bottom, 5)
             
             
             
@@ -50,10 +51,32 @@ struct ChatView: View {
         }
         .padding(.top, 1)
         .navigationBarTitleDisplayMode(.inline)
+        .navigationBarItems(leading: navBarLeadingBtn, trailing: navBarTrailingBtn)
         .onAppear{
             viewModel.markAsUnread(false, chat: chat)
         }
         
+    }
+    
+    var navBarLeadingBtn: some View {
+        Button(action: {}) {
+            HStack {
+                Image(chat.person.imgString)
+                    .resizable()
+                    .frame(width: 40, height: 40)
+                    .clipShape(Circle())
+                
+                Text(chat.person.name).bold()
+            }
+            
+        }
+    }
+    
+    var navBarTrailingBtn: some View {
+        Button(action: {} ) {
+            Text("Test")
+            
+        }
     }
     
     func scrollTo(messageID: UUID, anchor: UnitPoint? = nil, shouldAnimate: Bool, scrollReader: ScrollViewProxy) {
@@ -77,7 +100,7 @@ struct ChatView: View {
                 
                 Button(action: sendMessage) {
                     Image(systemName: "paperplane.fill")
-                        .foregroundColor(text.isEmpty ? .indigo : .cyan)
+                        .foregroundColor(text.isEmpty ? .blue : .cyan)
                         .frame(width: height, height: height)
                         .background(
                         Circle()
@@ -112,7 +135,7 @@ struct ChatView: View {
                     ZStack{
                         Text(message.text)
                             .padding(.horizontal)
-                            .padding(.vertical, 12)
+                            .padding(.vertical, 13)
                             .background(isRecevied ? Color.yellow.opacity(1) : .orange.opacity(1))
                             .cornerRadius(15)
                     }
@@ -131,7 +154,10 @@ struct ChatView: View {
 
 struct ChatView_Previews: PreviewProvider {
     static var previews: some View {
-        ChatView(chat: Chat.sampleChat[0])
-            .environmentObject(ChatsViewModel())
+        NavigationView {
+            ChatView(chat: Chat.sampleChat[0])
+                .environmentObject(ChatsViewModel())
+        }
+       
     }
 }
