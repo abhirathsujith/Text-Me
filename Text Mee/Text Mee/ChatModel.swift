@@ -283,6 +283,35 @@ extension Chat {
             .Received, date: Date()),
             ], hasUnreadMessage: true),
         
+        Chat(person: Person(name: "ALL", imgString: "9"), messages: [
+            Message ("Hey AB", type: .Sent, date: Date(timeIntervalSinceNow: -86400 * 3)),
+            Message ("I am just developing an WhatsApp Clone App and it is so hard to create a fake chat conversation. Can you help me out with it?", type: .Sent, date: Date(timeIntervalSinceNow:
+            -86400 * 3)),
+            Message ("Please I need your help @", type: .Sent, date: Date(timeIntervalSinceNow: -86400 * 3)),
+            Message ("Sure how can I help you flo?", type: .Received, date: Date(timeIntervalSinceNow: -86400 * 2)),
+            Message ("Maybe you send me some \"good\" jokes @", type: .Sent, date: Date(timeIntervalSinceNow:
+            -86400 * 2)),
+            Message ("Sure I can do that. No problem @@", type: .Received, date: Date(timeIntervalSinceNow: -86400 * 2)),
+            Message ("What do you call a fish with no eyes?", type: .Received, date: Date(timeIntervalSinceNow:
+            -86400 * 1)),
+            Message( "Hmm, Idk", type: .Sent, date: Date(timeIntervalSinceNow:
+            -86400 * 1)),
+            Message("A fsh", type:
+            .Received,
+            date: Date(timeIntervalSinceNow:
+            -86400 * 1)),
+            Message ("OMG so bad @@", type:
+                    .Sent, date: Date(timeIntervalSinceNow:
+            -86400 * 1)),
+            Message ("Let me try one", type:
+                    .Sent, date: Date(timeIntervalSinceNow:
+            -86400 * 1)),
+            Message ("There are 10 types of people in this world, those who understand binary and those who don't", type:
+                    .Sent, date: Date(timeIntervalSinceNow: -86400 * 1)),
+            Message ("Made for iOS!!!", type:
+            .Received, date: Date()),
+            ], hasUnreadMessage: true),
+        
         
     ]
 }
