@@ -172,9 +172,13 @@ struct ChatView: View {
                 .font(.system(size: 13, weight: .regular))
                 .frame(width: 120)
                 .padding(.vertical, 5)
-                .background(Capsule().foregroundColor(.cyan))
+                .background(Capsule().foregroundColor(.cyan .opacity(1.5)))
             
         }
+        
+        .padding(.vertical, 5)
+        .frame(maxWidth: .infinity)
+        
     }
 
 }
